@@ -43,7 +43,7 @@ Module with utility functions for array manipulation.
 - PalLib.Array.Length -> Function to get the length of an PalLib.Array{object}.
 - PalLib.Array.Add -> Function to add an element to an PalLib.Array{object}.
 - PalLib.Array.Remove -> Function to remove an element from an PalLib.Array{object}.
-- PalLib.Array.ForEach -> Function to execute a function on each element of an array.
+- PalLib.Array.ForEach -> Function to execute a function on each element of an PalLib.Array{object}.
 
 ### PalLib.File
 
