@@ -1,5 +1,7 @@
 # Palworld PalLib - Utility Library
 
+![PalLib](logo-20x.jpg)
+
 A utility library for developing mods for the game Palworld.
 
 ## Installation
