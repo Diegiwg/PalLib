@@ -16,10 +16,10 @@ A utility library for developing mods for the game Palworld.
 
 Main module. Contains all modules of the library.
 
-- PalLib.Use -> Function to register in the console that Mod [X] is using PalLib.
-- PalLib.Log -> Function to log messages to the console.
 - PalLib:Version -> Property holding the current version of PalLib.
 - PalLib:Dir -> Property holding the directory path of the game executable.
+- PalLib.Log -> Function to log messages to the console.
+- PalLib.Use -> Function to register in the console that Mod [X] is using PalLib.
 
 ### PalLib.Config
 
@@ -31,12 +31,18 @@ Module for manipulating configuration files. With this, you can provide your use
 
 Module with utility functions for string manipulation.
 
-- PalLib.String.Split -> Function to split a string into an array of strings.
+- PalLib.String.Split -> Function to split a string into an PalLib.Array{object} of strings.
+- PalLib.String.Trim -> Function to trim a string and return a new string.
 
 ### PalLib.Array
 
 Module with utility functions for array manipulation.
 
+- PalLib.Array{object} -> Object representing an array with the 'length' property.
+- PalLib.Array.New -> Function to create a new PalLib.Array{object}.
+- PalLib.Array.Length -> Function to get the length of an PalLib.Array{object}.
+- PalLib.Array.Add -> Function to add an element to an PalLib.Array{object}.
+- PalLib.Array.Remove -> Function to remove an element from an PalLib.Array{object}.
 - PalLib.Array.ForEach -> Function to execute a function on each element of an array.
 
 ### PalLib.File
