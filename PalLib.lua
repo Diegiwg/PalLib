@@ -1,7 +1,7 @@
 local PalLib = {}
 
 PalLib.Name = "PalLib"
-PalLib.Version = "0.0.1"
+PalLib.Version = "0.0.2"
 PalLib.Dir = string.gsub(io.popen("cd"):read '*all', "\n", "")
 
 --- Informe that this mod is used by another mod
@@ -40,7 +40,10 @@ local function ConvertValueToTyped(type, value)
         ["int"] = function() return tonumber(value) end
     }
 
-    return types[type]()
+    local callback = types[type]
+    if not callback then return "err" end
+
+    return callback()
 end
 
 --- Internal function to check if a line is a comment
@@ -65,10 +68,10 @@ local function ParseValue(line, configs)
         local value = string.sub(line, string.find(line, "=") + 1)
 
         local typed = ConvertValueToTyped(configs.currentType, value)
-        if typed then
-            configs[key] = typed
-            return true
-        end
+        if typed == "err" or typed == nil then return false end
+        
+        configs[key] = typed
+        return true
     end
 
     return false
